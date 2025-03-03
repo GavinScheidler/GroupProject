@@ -14,6 +14,7 @@ public class UserHandler {
     private List<User> users;
     private static final String USER_FILE = "users.csv";
     private static UserHandler instance; // Singleton instance
+    private static UsernameValidator UsernameValidator;
 
     // Private constructor to prevent direct instantiation
     private UserHandler() {
@@ -35,14 +36,13 @@ public class UserHandler {
             System.out.println("Invalid username! It must start with a letter, contain only letters, numbers, periods, or underscores, and be between 6 and 15 characters.");
             return false;
         }
-
+        
         for (User user : users) {
             if (user.getUsername().equals(username)) {
                 System.out.println("Username already taken.");
                 return false;
             }
         }
-        
         users.add(new User(name, username, password));
         saveUsers();
         System.out.println("User registered successfully!");
