@@ -3,6 +3,16 @@ package Banking.Service;
 import Banking.Model.Account.Account;
 
 public class TransactionHandler {
+    private static TransactionHandler instance; // Singleton instance
+
+    // Public method to get the single instance
+    public static TransactionHandler getInstance() {
+        if (instance == null) {
+            instance = new TransactionHandler();
+        }
+        return instance;
+    }
+
     public void deposit(Account account, double amount) {
         if (amount > 0) {
             account.setBalance(account.getBalance() + amount);
