@@ -1,5 +1,7 @@
-//Dane Iwema
-
+/*
+OBJ02-J Example: Preserve dependencies in subclasses when changing super classes
+Author: Dane Iwema
+*/
 class Account {
     // Maintains all banking-related data such as account balance
     private double balance;

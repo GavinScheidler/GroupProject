@@ -1,5 +1,7 @@
-//Dane Iwema
-
+/*
+MET07-J Example: Never declare a class method that hides a method declared in a superclass or super interface
+Author: Dane Iwema
+*/
 class GrantAccess {
     public void displayAccountStatus() {
         System.out.println("Account details for admin: XX");

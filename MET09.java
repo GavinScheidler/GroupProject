@@ -1,5 +1,7 @@
-//Dane Iwema
-
+/*
+MET09-J Example: Classes that define an equals() method must also define a hashCode() method
+Author: Dane Iwema
+*/
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;

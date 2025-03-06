@@ -1,5 +1,7 @@
-//Dane Iwema
-
+/*
+FIO02-J Example:Detect and handle file-related errors
+Author: Dane Iwema
+*/
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;

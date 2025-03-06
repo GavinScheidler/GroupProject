@@ -1,4 +1,7 @@
-//Dane Iwema
+/*
+OBJ03-J Example: Prevent heap pollution
+Author: Dane Iwema
+*/
 
 import java.util.ArrayList;
 import java.util.Collections;

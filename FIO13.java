@@ -1,5 +1,7 @@
-//Dane Iwema
-
+/*
+FIO13-J Example: Do not log sensitive information outside a trust boundary.
+Author: Dane Iwema
+*/
 import java.util.logging.*;
 
 public class FIO13 {
