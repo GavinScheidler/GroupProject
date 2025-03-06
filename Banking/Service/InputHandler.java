@@ -51,4 +51,11 @@ public class InputHandler {
 
     }
 
+    public String in(String prompt, int seperator) {
+
+        System.out.print(prompt);
+        return in();
+
+    }
+
 }
