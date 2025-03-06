@@ -1,3 +1,5 @@
+//Dane Iwema
+
 import java.util.Scanner;
 
 public class NUM08 {
