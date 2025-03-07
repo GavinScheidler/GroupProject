@@ -1,5 +1,3 @@
-
-
 public class EXP51 {
     public static void main(String[] args) {
         boolean a = true;

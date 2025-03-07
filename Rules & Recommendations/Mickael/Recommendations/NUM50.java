@@ -1,5 +1,3 @@
-
-
 public class NUM50 {
     public static void main(String[] args) {
         int a = 5;
