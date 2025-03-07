@@ -25,7 +25,7 @@ public class InputHandler {
             /*
              * IDS03 - Checks for scripting
              */
-            if (!Pattern.matches("[A-Za-z0-9_\\.]+", temp))
+            if (!Pattern.matches("[A-Za-z0-9_\\.\\-]+", temp))
                 System.out.print("Invalid, try again: ");
             else
                 cont = false;
@@ -48,6 +48,13 @@ public class InputHandler {
                 temp = in();
             }
         return (double) d;
+
+    }
+
+    public String in(String prompt, int seperator) {
+
+        System.out.print(prompt);
+        return in();
 
     }
 

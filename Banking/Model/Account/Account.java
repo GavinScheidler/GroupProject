@@ -23,5 +23,9 @@ public abstract class Account {
         this.balance = balance;
     }
 
+    public String toString() {
+        return ("Account Number: " + getAccountNumber() + "\nBalance: " + getBalance());
+    }
+
     public abstract void accountType(); // Abstract method to be implemented by subclasses
 }

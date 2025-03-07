@@ -52,7 +52,6 @@ public class UserHandler {
     public User login(String username, String password) {
         for (User user : users) {
             if (user.getUsername().equals(username) && user.checkPassword(password)) {
-                System.out.println("Login successful! Welcome, " + user.getName());
                 return user;
             }
         }

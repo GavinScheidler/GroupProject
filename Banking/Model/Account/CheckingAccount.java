@@ -6,7 +6,6 @@ public class CheckingAccount extends Account {
         super(initialBalance);
     }
 
-
     public boolean withdraw(double amount) {
         if (amount <= balance) {
             balance -= amount;
@@ -21,4 +20,9 @@ public class CheckingAccount extends Account {
     public void accountType() {
         System.out.println("This is a Checking Account.");
     }
+
+    public String toString() {
+        return ("Account Type: Checking\nAccount Number: " + getAccountNumber() + "\nBalance: " + getBalance());
+    }
+
 }
