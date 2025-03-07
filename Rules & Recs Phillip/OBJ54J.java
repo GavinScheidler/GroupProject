@@ -1,6 +1,6 @@
-/*
+/**
 CODE EXAMPLE FOR OBJ54-J
-Author: Phillip Nguyen
+@author Phillip Nguyen
 */
 
 public class OBJ54J {

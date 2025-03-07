@@ -1,7 +1,7 @@
-/*
+/**
 CODE EXAMPLE FOR OBJ14-J
-Author: Phillip Nguyen
-info page is a stub but it's similar to an issue in C++ so I included it maybe I shouldn't have
+@author Phillip Nguyen
+info page is a stub but it's similar to an issue in C++ so I included it maybe I shouldn't have since it contradicts OBJ54-J
 */
 
 public class OBJ14J {
@@ -11,7 +11,7 @@ public class OBJ14J {
     }
 }
 
-class Object {
+public class Object {
     public void process(){
         String data = "Hello";
         System.out.println(data); 

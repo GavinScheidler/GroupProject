@@ -1,6 +1,6 @@
-/*
+/** 
 CODE EXAMPLE FOR MET02-J
-Author: Phillip Nguyen
+@author Phillip Nguyen
 */
 import java.time.LocalDate; //instead of java.util.Date (deprecated)
 

@@ -1,10 +1,10 @@
-/*
+/**
 CODE EXAMPLE FOR OBJ52-J
-Author: Phillip Nguyen
+@author Phillip Nguyen
 */
 
 public class OBJ52J {
-    private static final String MESSAGE = "Hello"; //reusable
+    private static final String MESSAGE = "Hello"; //reusable, best practice
 
     public static void main(String[] args){
         for (int i = 0; i < 5; i++){      

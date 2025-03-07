@@ -1,6 +1,6 @@
-/*
+/**
 CODE EXAMPLE FOR OBJ13-J
-Author: Phillip Nguyen
+@author Phillip Nguyen
 */
 
 public class OBJ13J {
@@ -14,6 +14,10 @@ public class OBJ13J {
         System.out.println("Original first value: " + obj.getValues()[0]);
     }
 
+    /**
+     * returns a copy of the int array
+     * @return : int[]
+     */
     public int[] getValues(){
         return values.clone(); // copy instead of the actual reference
     }
