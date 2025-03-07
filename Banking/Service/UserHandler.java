@@ -5,7 +5,7 @@ import java.util.List;
 
 import Banking.Model.User;
 
-public class UserHandler{
+public class UserHandler {
     private List<User> users;
 
     public UserHandler() {
@@ -28,7 +28,6 @@ public class UserHandler{
     public User login(String username, String password) {
         for (User user : users) {
             if (user.getUsername().equals(username) && user.checkPassword(password)) {
-                System.out.println("Login successful! Welcome, " + user.getName());
                 return user;
             }
         }
