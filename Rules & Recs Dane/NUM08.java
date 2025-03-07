@@ -1,5 +1,7 @@
-//Dane Iwema
-
+/*
+MET09-J Example: Check floating point inputs for exceptional values
+Author: Dane Iwema
+*/
 import java.util.Scanner;
 
 public class NUM08 {
