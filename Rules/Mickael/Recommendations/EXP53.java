@@ -6,13 +6,12 @@
  */
 
  public class EXP53 {
+    private static final int a = 1, b = 3, c = 4;
     /**
      * The main method that demonstrates how operator precedence affects arithmetic expressions.
      * It compares results with and without parentheses to show how parentheses can change the order of operations.
      */
-    public static void main(String[] args) {
-        int a = 1, b = 3, c = 4;
-        
+    public static void main(String[] args) {        
         // Calculating results with and without parentheses
         int withoutParentheses = a + b * c;  // Multiplication happens first due to operator precedence
         int withParentheses = (a + b) * c;  // Parentheses change the order, making addition happen first

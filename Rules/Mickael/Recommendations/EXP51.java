@@ -6,29 +6,36 @@
  */
 
 public class EXP51 {
+    private static boolean a = true;
+    private static boolean b = false;
+
     /**
      * Main method that demonstrates assignment inside conditional statements.
-     * This method shows the difference between the assignment (`=`) and comparison (`==`) operators.
-     * It prints the results to the console to highlight how unintended behavior occurs when using assignment in conditions.
+     * This method shows the difference between the assignment (`=`) and comparison
+     * (`==`) operators.
+     * It prints the results to the console to highlight how unintended behavior
+     * occurs when using assignment in conditions.
      */
     public static void main(String[] args) {
-        System.out.println("Original assignments: ");
-        boolean a = true; 
-        boolean b = false;
-
         // Printing initial values
+        System.out.println("Original assignments: ");
         System.out.println("a: " + a);
         System.out.println("b: " + b);
 
-        System.out.println(); 
+        System.out.println();
 
         // Checking logical comparison between 'a' and 'b'
         System.out.println("Testing: 'a != b'");
         if (a != b) { // '!=' checks if 'a' and 'b' are different (true in this case)
             System.out.println("Working as expected!");
-        }   
-        
+        } else {
+            System.out.println("Not working as expected!");
+        }
+
+        System.out.println();
+
         // Printing values after first comparison
+        System.out.println("After first comparison using '==' : ");
         System.out.println("a: " + a);
         System.out.println("b: " + b);
 
@@ -39,7 +46,7 @@ public class EXP51 {
             System.out.println("This is an unintended behavior!");
         }
 
-        System.out.println("Testing: 'a != b'");
+        System.out.println("After second 'comparison' using '=' : ");
         System.out.println("a: " + a); // 'a' has now taken the value of 'b' (false)
         System.out.println("b: " + b); // 'b' remains false
     }

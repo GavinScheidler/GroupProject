@@ -11,7 +11,7 @@ public class IDS01 {
 
     public static void check(String s) {
         Pattern pattern = Pattern.compile("[<>]");
-        Matcher matcher = pattern.matcher(s);
+        Matcåher matcher = pattern.matcher(s);
 
         if (matcher.find()) {
             throw new IllegalStateException();
