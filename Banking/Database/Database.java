@@ -18,8 +18,9 @@ public class Database {
     private static final String FILE_NAME = "database.txt";
 
     /**
-     * This method will rewrite the data at the postion of the
-     * User given only if the username in the spot is empty or matching
+     * This method will find the next open line and save the user
+     * in the following format:
+     * username, password, name, [accountType, balance, [interestRate]]
      * 
      * @param user a User object you want to save to the database
      * @return true if the save was successfull and false if it was not successfull
@@ -61,9 +62,10 @@ public class Database {
 
 
     /**
-     * This method will pull the user with
+     * This method will probe the database for
      * the matching username and password with the given
-     * user name and password.
+     * user name and password and create a user object with that information
+     * the user will then be removed form the database and the line cleared.
      * 
      * @param username string
      * @param password string
