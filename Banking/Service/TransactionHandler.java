@@ -51,7 +51,7 @@ public class TransactionHandler {
         }
     }
 
-    public void deposit(String accountNumber, double amount) {
+    public void deposit(Account account, double amount) {
         Account account = accounts.get(accountNumber);
         if (account != null && amount > 0) {
             account.setBalance(account.getBalance() + amount);

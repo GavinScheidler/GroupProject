@@ -33,6 +33,14 @@ public class SavingsAccount extends Account {
         this.interestRate = interestRate; // Sets the interest rate for the account
     }
 
+    public SavingsAccount(String accountNumber, double initialBalance, double interestRate) {
+        super(accountNumber, initialBalance); // Calls the constructor of the Account class to set the balance and account number
+        if (interestRate < 0) {
+            interestRate = 0; // Interest rate cannot be negative, so it's set to 0 if the provided rate is negative
+        }
+        this.interestRate = interestRate; // Sets the interest rate for the account
+    }
+
     /**
      * Returns the interest rate for the savings account.
      * 

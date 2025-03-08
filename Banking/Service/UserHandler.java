@@ -26,7 +26,7 @@ import Banking.Model.User;
  */
 public class UserHandler {
     private List<User> users;
-    private static final String USER_FILE = "users.csv"; // The file that stores the user data
+    private static final String USER_FILE = "Banking/Resource/users.csv"; // The file that stores the user data
     private static UserHandler instance; // Singleton instance of the UserHandler class
     private static UsernameValidator UsernameValidator; // Class responsible for validating usernames
 

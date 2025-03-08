@@ -27,6 +27,10 @@ public class CheckingAccount extends Account {
         super(initialBalance); // Calls the constructor of the Account class to set the balance and account number
     }
 
+    public CheckingAccount(String accountNumber, double initialBalance) {
+        super(accountNumber, initialBalance); // Calls the constructor of the Account class to set the balance and account number
+    }
+
     /**
      * Withdraws a specified amount from the checking account. 
      * If the balance is sufficient, the amount is subtracted from the balance.

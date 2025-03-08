@@ -42,6 +42,11 @@
          this.accountNumber = UUID.randomUUID().toString(); // Generates a unique account number using UUID
          this.balance = initialBalance; // Sets the initial balance of the account
      }
+
+     public Account(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance; // Sets the initial balance of the account
+    }
  
      /**
       * Returns the account number of the account.
