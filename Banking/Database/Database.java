@@ -16,7 +16,6 @@ import java.io.*;
  */
 public class Database {
     private static final String FILE_NAME = "database.txt";
-
     /**
      * This method will find the next open line and save the user
      * in the following format:
@@ -102,10 +101,12 @@ public class Database {
                     index += 2;
 
                     if (accountType.equals("Checking")) {
-                        foundUser.addCheckingAccount(balance);
+                        CheckingAccount account = new CheckingAccount(balance);
+                        foundUser.addAccount(account);
                     } else if (accountType.equals("Savings")) {
                         double interestRate = Double.parseDouble(parts[index]);
-                        foundUser.addSavingAccount(balance, interestRate);
+                        SavingsAccount account = new SavingsAccount(balance, interestRate);
+                        foundUser.addAccount(account);
                         index++;
                     }
                 }

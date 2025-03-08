@@ -25,10 +25,10 @@ import Banking.Model.User;
  * @since 2025
  */
 public class UserHandler {
-    private List<User> users;
+    private List<User> users; // List to store users
     private static final String USER_FILE = "Banking/Resource/users.csv"; // The file that stores the user data
     private static UserHandler instance; // Singleton instance of the UserHandler class
-    private static UsernameValidator usernameValidator = new UsernameValidator(); // Class responsible for validating usernames
+    private UsernameValidator usernameValidator = new UsernameValidator(); // Class responsible for validating usernames
 
     /**
      * Private constructor to prevent direct instantiation. Initializes the list of users 
@@ -38,7 +38,6 @@ public class UserHandler {
         this.users = new ArrayList<>();
         loadUsers(); // Load users from the CSV file on initialization
         
-        //FIO14-J: Perform proper cleanup at program termination. 
         // Register the shutdown hook to save users when the program terminates
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
@@ -58,7 +57,7 @@ public class UserHandler {
         if (instance == null) {
             instance = new UserHandler(); // Create a new instance if it doesn't exist
         }
-        return instance;
+        return instance; // Return the existing or newly created instance
     }
 
     /**
@@ -73,6 +72,8 @@ public class UserHandler {
      */
     public boolean registerUser(String name, String username, String password) {
         // Validate username format
+        System.out.println(username);
+        System.out.println(usernameValidator.isValidUsername(username));
         if (!usernameValidator.isValidUsername(username)) {
             System.out.println("Invalid username! It must start with a letter, contain only letters, numbers, periods, or underscores, and be between 6 and 15 characters.");
             return false;
@@ -148,7 +149,12 @@ public class UserHandler {
         }
     }
 
-    // Method to get a user by username
+    /**
+     * Gets a user by their username.
+     * 
+     * @param username  the username of the user to retrieve
+     * @return          the User object if found, null otherwise
+     */
     public User getUserByUsername(String username) {
         for (User user : users) {
             if (user.getUsername().equals(username)) {
@@ -158,7 +164,11 @@ public class UserHandler {
         return null; // Return null if no user found with the username
     }
 
-    // Getter for users list
+    /**
+     * Getter method for the list of users.
+     * 
+     * @return the list of users
+     */
     public List<User> getUsers() {
         return users;
     }

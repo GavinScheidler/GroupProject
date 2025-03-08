@@ -21,7 +21,7 @@ public class main {
 
     // Declare static objects for handling input, database, user and transaction operations
     static InputHandler i = new InputHandler();
-    //static Database e = new Database();
+    static Database e = new Database();
     static UserHandler uh = UserHandler.access();
     static TransactionHandler t = TransactionHandler.access();
     static AccountHandler ah = AccountHandler.access();
@@ -84,7 +84,7 @@ public class main {
                             t.deposit(ac, i.in("How much would you like to deposit?: "));
                         } else if (response == 3.0) {
                             // Display account balance
-                            t.displayBalance(ac);
+                            System.out.println(t.getBalance(ac));
                         } else if (response == 4.0) {
                             // Transfer funds between accounts
                             t.transfer(ac, user.getAccount(i.in("Transfer to what account?: ", 0)),

@@ -32,7 +32,7 @@ public class UsernameValidator {
      * @param username the username to validate
      * @return true if the username matches the pattern, false otherwise
      */
-    public static boolean isValidUsername(String username) {
+    public boolean isValidUsername(String username) {
         //IDS11-J : Perform any string modification before validation.
         
         // Convert username to lowercase to make validation case-insensitive

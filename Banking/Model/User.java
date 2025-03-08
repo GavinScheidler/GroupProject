@@ -86,11 +86,10 @@ public class User {
     }
 
     /**
-     * Adds a new SavingsAccount to the user's list of accounts with the specified
+     * Adds a new Account to the user's list of accounts with the specified
      * initial balance and interest rate.
      * 
-     * @param initialBalance the initial balance of the savings account
-     * @param interestRate   the interest rate of the savings account
+     * @param account account to be added to the user's list of accounts
      */
     public void addAccount(Account account) {
         accounts.add(account);
