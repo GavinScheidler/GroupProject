@@ -2,6 +2,7 @@ package Banking;
 
 import Banking.Service.TransactionHandler;
 import Banking.Service.UserHandler;
+import Banking.Service.AccountHandler;
 import Banking.Service.InputHandler;
 import Banking.Database.Database;
 import Banking.Model.User;
@@ -20,9 +21,10 @@ public class main {
 
     // Declare static objects for handling input, database, user and transaction operations
     static InputHandler i = new InputHandler();
-    static Database e = new Database();
+    //static Database e = new Database();
     static UserHandler uh = UserHandler.access();
     static TransactionHandler t = TransactionHandler.access();
+    static AccountHandler ah = AccountHandler.access();
 
     /**
      * Displays the main menu for the user once they have logged in.
@@ -54,11 +56,11 @@ public class main {
                     // Create a savings account
                     double iB = i.in("What's the initial balance?: ");
                     double iR = i.in("What's the interest rate?: ");
-                    user.addSavingAccount(iB, iR);
+                    ah.newAccount(user.getUsername(), iB, iR);
                 } else if (response == 2.0) {
                     // Create a checking account
                     double iB = i.in("What's the initial balance?: ");
-                    user.addCheckingAccount(iB);
+                    ah.newAccount(user.getUsername(), iB);
                 } else {
                     // Handle invalid input
                     System.out.println("Invalid Input.");

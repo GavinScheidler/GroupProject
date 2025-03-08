@@ -1,8 +1,6 @@
 package Banking.Service;
 
 import Banking.Model.Account.Account;
-import Banking.Model.Account.CheckingAccount;
-import Banking.Model.Account.SavingsAccount;
 
 import java.io.*;
 import java.util.*;
@@ -23,8 +21,6 @@ import java.util.*;
 public class TransactionHandler {
     private static final String LOG_FILE = "Banking/Resource/transactions.csv";
     private static TransactionHandler instance;
-    private Map<String, Account> accounts;
-
     private TransactionHandler() {
     }
 
@@ -43,30 +39,28 @@ public class TransactionHandler {
         }
     }
 
-    private void logTransaction(String type, String fromAccount, String toAccount, double amount) {
+    private void logTransaction(String type, Account fromAccount, Account toAccount, double amount) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(LOG_FILE, true))) {
-            writer.println(type + "," + fromAccount + "," + toAccount + "," + amount + "," + new Date());
+            writer.println(type + "," + fromAccount.getAccountNumber() + "," + toAccount.getAccountNumber() + "," + amount + "," + new Date());
         } catch (IOException e) {
             System.out.println("Error logging transaction: " + e.getMessage());
         }
     }
 
     public void deposit(Account account, double amount) {
-        Account account = accounts.get(accountNumber);
         if (account != null && amount > 0) {
             account.setBalance(account.getBalance() + amount);
-            logTransaction("Deposit", accountNumber, amount);
+            logTransaction("Deposit", account.getAccountNumber(), amount);
             System.out.println("Deposited: $" + amount);
         } else {
             System.out.println("Invalid deposit.");
         }
     }
 
-    public boolean withdraw(String accountNumber, double amount) {
-        Account account = accounts.get(accountNumber);
+    public boolean withdraw(Account account, double amount) {
         if (account != null && amount > 0 && amount <= account.getBalance()) {
             account.setBalance(account.getBalance() - amount);
-            logTransaction("Withdrawal", accountNumber, amount);
+            logTransaction("Withdrawal", account.getAccountNumber(), amount);
             System.out.println("Withdrawn: $" + amount);
             return true;
         } else {
@@ -75,22 +69,18 @@ public class TransactionHandler {
         }
     }
 
-    public void displayBalance(String accountNumber) {
-        Account account = accounts.get(accountNumber);
+    public void displayBalance(Account account) {
         if (account != null) {
-            System.out.println("Account " + accountNumber + " Balance: $" + account.getBalance());
+            System.out.println("Account " + account.getAccountNumber() + " Balance: $" + account.getBalance());
         } else {
             System.out.println("Account not found.");
         }
     }
 
-    public boolean transfer(String fromAccountNumber, String toAccountNumber, double amount) {
-        Account fromAccount = accounts.get(fromAccountNumber);
-        Account toAccount = accounts.get(toAccountNumber);
-
-        if (fromAccount != null && toAccount != null && withdraw(fromAccountNumber, amount)) {
-            deposit(toAccountNumber, amount);
-            logTransaction("Transfer", fromAccountNumber, toAccountNumber, amount);
+    public boolean transfer(Account fromAccount, Account toAccount, double amount) {
+        if (fromAccount != null && toAccount != null && withdraw(fromAccount, amount)) {
+            deposit(toAccount, amount);
+            logTransaction("Transfer", fromAccount, toAccount, amount);
             return true;
         } else {
             System.out.println("Transfer failed.");

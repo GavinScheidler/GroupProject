@@ -28,7 +28,7 @@ public class UserHandler {
     private List<User> users;
     private static final String USER_FILE = "Banking/Resource/users.csv"; // The file that stores the user data
     private static UserHandler instance; // Singleton instance of the UserHandler class
-    private static UsernameValidator UsernameValidator; // Class responsible for validating usernames
+    private static UsernameValidator usernameValidator = new UsernameValidator(); // Class responsible for validating usernames
 
     /**
      * Private constructor to prevent direct instantiation. Initializes the list of users 
@@ -73,7 +73,7 @@ public class UserHandler {
      */
     public boolean registerUser(String name, String username, String password) {
         // Validate username format
-        if (!UsernameValidator.isValidUsername(username)) {
+        if (!usernameValidator.isValidUsername(username)) {
             System.out.println("Invalid username! It must start with a letter, contain only letters, numbers, periods, or underscores, and be between 6 and 15 characters.");
             return false;
         }
@@ -146,5 +146,20 @@ public class UserHandler {
         } catch (IOException e) {
             System.out.println("No existing users found."); // Handle errors during file read
         }
+    }
+
+    // Method to get a user by username
+    public User getUserByUsername(String username) {
+        for (User user : users) {
+            if (user.getUsername().equals(username)) {
+                return user;
+            }
+        }
+        return null; // Return null if no user found with the username
+    }
+
+    // Getter for users list
+    public List<User> getUsers() {
+        return users;
     }
 }

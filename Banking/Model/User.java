@@ -18,8 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Banking.Model.Account.Account;
-import Banking.Model.Account.SavingsAccount;
-import Banking.Model.Account.CheckingAccount;
 
 /**
  * Represents a user in the banking system. A user has a name, username, password,
@@ -83,6 +81,10 @@ public class User {
         return accounts;
     }
 
+    public void setAccounts(List<Account> accounts) {
+        this.accounts = accounts;
+    }
+
     /**
      * Adds a new SavingsAccount to the user's list of accounts with the specified
      * initial balance and interest rate.
@@ -90,18 +92,8 @@ public class User {
      * @param initialBalance the initial balance of the savings account
      * @param interestRate   the interest rate of the savings account
      */
-    public void addSavingAccount(double initialBalance, double interestRate) {
-        accounts.add(new SavingsAccount(initialBalance, interestRate));
-    }
-
-    /**
-     * Adds a new CheckingAccount to the user's list of accounts with the specified
-     * initial balance.
-     * 
-     * @param initialBalance the initial balance of the checking account
-     */
-    public void addCheckingAccount(double initialBalance) {
-        accounts.add(new CheckingAccount(initialBalance));
+    public void addAccount(Account account) {
+        accounts.add(account);
     }
 
     /**
