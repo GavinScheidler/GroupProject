@@ -1,6 +1,6 @@
-/*
+/**
 CODE EXAMPLE FOR OBJ57-J
-Author: Phillip Nguyen
+@author Phillip Nguyen
 */
 public class OBJ57J {
     public static void main(String[] args){

@@ -1,6 +1,6 @@
-/*
+/**
 CODE EXAMPLE FOR OBJ01-J
-Author: Phillip Nguyen
+@author Phillip Nguyen
 */
 
 public class OBJ01J {
@@ -15,6 +15,10 @@ public class OBJ01J {
         this.name = name;
     }
 
+    /**
+     * gets the Name
+     * @return : String
+     */
     public String getName(){
         return name;
     }

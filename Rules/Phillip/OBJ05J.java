@@ -1,6 +1,6 @@
-/*
+/**
 CODE EXAMPLE FOR OBJ05-J
-Author: Phillip Nguyen
+@author Phillip Nguyen
 */
 
 import java.util.ArrayList;
@@ -18,6 +18,10 @@ public class OBJ05J {
         System.out.println("Original private list: " + obj.getNumbers()); 
     }
 
+    /**
+     * returns a copy of the list
+     * @return : List<Integer>
+     */
     public List<Integer> getNumbers(){
         return new ArrayList<>(numbers); //copy of the list
     }

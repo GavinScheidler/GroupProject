@@ -1,6 +1,6 @@
-/*
+/**
 CODE EXAMPLE FOR MET06-J
-Author: Phillip Nguyen
+@author Phillip Nguyen
 */
 
 public class MET06J implements Cloneable {
@@ -30,6 +30,10 @@ public class MET06J implements Cloneable {
         return clonedObject;
     }
 
+    /**
+     * gets the data
+     * @return : String
+     */
     public String getData(){
         return data;
     }
